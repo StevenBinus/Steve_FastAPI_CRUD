@@ -8,7 +8,7 @@ user = 'steve'
 password = 'Internship2023'
 host = '10.1.32.64'
 db_name = 'DMSLIVE'
-database_url = f"mssql+pymssql://{user}:{password}@{host}/{db_name}"
+database_url = f'mssql+pymssql://{user}:{password}@{host}/{db_name}'
 
 # basic infrastructure to use ORM library
 engine = create_engine(database_url)
