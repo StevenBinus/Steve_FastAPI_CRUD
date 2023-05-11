@@ -2,12 +2,15 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
+import os
 
 # database connection
-user = 'steve'
-password = 'Internship2023'
-host = '10.1.32.64'
-db_name = 'DMSLIVE'
+load_dotenv()
+user = os.getenv('user') 
+password = os.getenv('password')
+host = os.getenv('host')
+db_name = os.getenv('db_name')
 database_url = f'mssql+pymssql://{user}:{password}@{host}/{db_name}'
 
 # basic infrastructure to use ORM library
