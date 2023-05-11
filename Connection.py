@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 import os
 
 # database connection
-load_dotenv()
+env_path = os.path.abspath('os.env')
+load_dotenv(env_path)
 user = os.getenv('user') 
 password = os.getenv('password')
 host = os.getenv('host')
