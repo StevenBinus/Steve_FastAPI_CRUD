@@ -4,7 +4,7 @@ from enum import Enum
 import json
 # internal library
 from Connection import engine
-from Base_model import header_model, detail_model
+from schema import header_model, detail_model
 
 #initiate router
 router = APIRouter(
