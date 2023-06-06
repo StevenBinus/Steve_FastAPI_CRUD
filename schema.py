@@ -3,17 +3,20 @@ from typing import List, Optional
 from decimal import Decimal
 import datetime
 
-class detail_model(BaseModel):
+class detail_schema(BaseModel):
     ItemCode: str
-    ItemName: str
-    QtyDemand: str
+    ItemName: str   
+    QtyDemand: Decimal
     ItemPrice: Decimal
     DiscPercent: Decimal
     DiscAmount: Decimal
     LineTotal:Decimal
     QtySupplied: Decimal
 
-class header_model(BaseModel):
+    class config:
+        orm_mode = True
+
+class header_schema(BaseModel):
     SOSysNo: int
     SODocNo: str
     SODate: datetime.date
@@ -25,5 +28,10 @@ class header_model(BaseModel):
     TOP: str
     TotalAmount: Decimal
     SalesEmployeeNo: Optional[str] = None
-    SalesemployeeName: str
-    Items:List[detail_model]
+    SalesEmployeeName: Optional[str]
+    Items:Optional[List[detail_schema]] = []
+
+    class config:
+        orm_mode = True
+
+
